@@ -10,6 +10,7 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'Valloric/YouCompleteMe' 
 Plugin 'morhetz/gruvbox'
 Plugin 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' } 
+Plugin 'chun-yang/auto-pairs'
 call vundle#end()            " required
 filetype plugin indent on    " required
 
@@ -52,7 +53,7 @@ set fencs=utf-8,ucs-bom,shift-jis,gb18030,gbk,gb2312,cp936
 
 
 set clipboard+=unnamed  " use the clipboards of vim and win
-set paste               " Paste from a windows or from vim
+"set paste               " Paste from a windows or from vim
 set go+=a               " Visual selection automatically copied to the clipboard
 
 "Activate the use of the mouse"
@@ -63,17 +64,24 @@ set selectmode=mouse,key
 "Config de teclas"
 let mapleader = " "
 nmap <Leader>s :w!<ENTER>
-inoremap <leader>; <C-o>A;
-nnoremap N y$
+inoremap ( ()<ESC>i
+imap [ []<ESC>i
+inoremap { {}<ESC>i
+imap < <><ESC>i
+imap ' ''<ESC>i
+imap " ""<ESC>i
+
+imap " ""<left>
+"inoremap ' ''<left>
+"inoremap ( ()<left>
+"inoremap [ []<left>
+"inoremap { {}<left>
+"inoremap {<CR> {<CR>}<ESC>O
+"inoremap {;<CR> {<CR>};<ESC>O
+"nnoremap N y$
+nmap <leader>; $A;
 noremap <Leader>q :q!<cr>
 map c "+p<CR>
-
-inoremap ( ()<ESC>i
-inoremap [ []<ESC>i
-inoremap { {}<ESC>i
-inoremap < <><ESC>i
-inoremap ‘ ’‘<ESC>i
-inoremap " ""<ESC>i
 
 "lol"
 

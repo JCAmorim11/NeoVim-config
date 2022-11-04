@@ -101,4 +101,4 @@ map c "+p<CR>
 "
 "
 "
-
+lua require('basic.lua')
